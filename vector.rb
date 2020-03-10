@@ -33,7 +33,7 @@ class Vector
 
   # Return the magnitude of a vector
   def mag
-    Math.sqrt(@x**2 + @y**2)
+    Math.sqrt(@x**2 + @y**2).round(14)
   end
 
   # Return the squared magnitude (faster than mag)
@@ -72,5 +72,11 @@ class Vector
   def is_equal? vector
     @x == vector.x && @y == vector.y &&  @z == vector.z ? true : false
   end
+
+  # Return an array representation of th vector
+  def get_array
+    [@x, @y, @z]
+  end
+
 
 end
