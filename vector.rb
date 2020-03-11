@@ -58,7 +58,7 @@ class Vector < Hash
   end
 
   # Set a vector to x and y value
-  def set! x = 0, y = 0, z = 0
+  def self.set! x = 0, y = 0, z = 0
     self[:x] = x
     self[:y] = y
     self[:z] = z
@@ -71,7 +71,13 @@ class Vector < Hash
 
   # Set the magnitude of a vector
   def set_mag! value
-    self.mult(value / self.mag)
+    mag = self.mag
+    if mag == 0
+      self.set(0,0,0)
+    else
+      mag = self.mag
+      self.set!(self[:x] * value / mag, self.y * value / mag, self.z * value / mag)
+    end
   end
 
   # Limit a vector to a max value
