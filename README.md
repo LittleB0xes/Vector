@@ -61,7 +61,7 @@ a = Vector.new(3, 4)
 c = a.mag         # => c = 5
 ```
 
-**mag_squared -> Number
+**mag_squared -> Number**
 
 Return the squared magnitude of the vector (faster than mag)
 
