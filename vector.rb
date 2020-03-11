@@ -108,15 +108,17 @@ class Vector < Hash
     [self[:x], self[:y], self[:z]]
   end
 
-  # Return the angle between two vectors
+  # Return the oriented angle between two vectors
   def angle_with vector
     cos_angle =[1, [(self.dot vector) / (self.mag * vector.mag), -1].max].min
-    Math.acos(cos_angle)
+
+    # sign of angle ?
+    sign = (self.cross vector).z <=> 0.0
+    sign = 1 if sign == 0
+
+    Math.acos(cos_angle) * sign
   end
-
-
 end
-
 
 class Array
   def to_vector3D
