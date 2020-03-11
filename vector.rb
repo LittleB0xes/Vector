@@ -47,6 +47,14 @@ class Vector < Hash
     self[:x] * vector.x + self[:y] * vector.y + self[:z] * vector.z
   end
 
+  # Return the cross product af vectors
+  def cross vector
+    x = self[:y] * vector.z - self[:z] * vector.y
+    y = self[:z] * vector.x - self[:x] * vector.z
+    z = self[:x] * vector.y - self[:y] * vector.x
+    Vector.new(x, y, z)
+  end
+
   # Return the magnitude of a vector
   def mag
     Math.sqrt(self[:x]**2 + self[:y]**2 + self[:z]**2)
