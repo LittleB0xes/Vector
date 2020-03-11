@@ -45,7 +45,7 @@ class Vector < Hash
 
   # Return the magnitude of a vector
   def mag
-    Math.sqrt(self[:x]**2 + self[:y]**2).round(14)
+    Math.sqrt(self[:x]**2 + self[:y]**2 + self[:z]**2).round(14)
   end
 
   # Return the squared magnitude (faster than mag)
