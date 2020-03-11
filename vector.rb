@@ -78,7 +78,7 @@ class Vector < Hash
   end
 
   # Set a vector to x and y value
-  def self.set! x = 0, y = 0, z = 0
+  def set! x = 0, y = 0, z = 0
     self[:x] = x
     self[:y] = y
     self[:z] = z
@@ -130,6 +130,15 @@ class Vector < Hash
 
     Math.acos(cos_angle) * sign
   end
+
+  def random_vector!
+    self[:x] = [-1, 1].sample * rand()
+    self[:y] = [-1, 1].sample * rand()
+    self[:z] = [-1, 1].sample * rand()
+    self.normalize!
+  end
+
+
 end
 
 class Array
