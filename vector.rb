@@ -49,7 +49,7 @@ class Vector < Hash
 
   # Return the magnitude of a vector
   def mag
-    Math.sqrt(self[:x]**2 + self[:y]**2 + self[:z]**2).round(14)
+    Math.sqrt(self[:x]**2 + self[:y]**2 + self[:z]**2)
   end
 
   # Return the squared magnitude (faster than mag)
@@ -102,8 +102,8 @@ class Vector < Hash
 
   # Return the angle between two vectors
   def angle_with vector
-    cos_angle = (self.dot vector) / (self.mag * vector.mag)
-
+    cos_angle =[1, [(self.dot vector) / (self.mag * vector.mag), -1].max].min
+    Math.acos(cos_angle)
   end
 
 
