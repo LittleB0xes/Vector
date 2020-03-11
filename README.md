@@ -22,10 +22,21 @@ b = Vector.new(5, 2)
 c = a.sub b # => c = {x: -3, y: -1, z: 1 }
 ```
 
-**mult(Numbe) -> Vector**
+**mult(Number) -> Vector**
+
 Multiplies by a scalar
 
 ```ruby
 a = Vector.new(6, 2)
 c = a.mult 3 # => c = {x: 18, y: 6, z: 0 }
+```
+
+**div(Number) -> Vector**
+
+Divide by a scalar
+Return nil if scalar = 0
+
+```ruby
+a = Vector.new(6, 2, 1.5)
+c = a.div 2 # => c = {x: 3, y: 1, z: 0.725 }
 ```
