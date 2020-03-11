@@ -2,6 +2,8 @@
 
 A DragonRuby GTK Library to work with vector (2D or 3D)
 
+... work in progress ...
+
 ## Methods
 
 **add(Vector) -> Vector**
