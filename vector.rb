@@ -76,7 +76,7 @@ class Vector < Hash
       self.set(0,0,0)
     else
       mag = self.mag
-      self.set!(self[:x] * value / mag, self.y * value / mag, self.z * value / mag)
+      self.set!(self[:x] * value / mag, self[:y] * value / mag, self[:z] * value / mag)
     end
   end
 
