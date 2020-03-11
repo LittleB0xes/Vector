@@ -6,12 +6,6 @@ class Vector < Hash
     self[:z] = z_init
   end
 
-  def copy vector
-    self[:x] = vector.x
-    self[:y] = vector.y
-    self[:z] = vector.z
-  end
-
   def x
     self[:x]
   end
