@@ -18,6 +18,18 @@ class Vector < Hash
     self[:z]
   end
 
+  def x= value
+    self[:x] = value
+  end
+
+  def y= value
+    self[:y] = value
+  end
+
+  def z= value
+    self[:z] = value
+  end
+
   # Addition of two vectors
   def add vector
     Vector.new(self[:x] + vector.x, self[:y] + vector.y, self[:z] + vector.z)
