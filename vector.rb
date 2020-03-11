@@ -35,7 +35,11 @@ class Vector < Hash
 
   # Divide a vector by a scalar
   def div scalar
-    Vector.new(self[:x] / scalar, self[:y] / scalar, self[:z] / scalar)
+    if scalar != 0
+      Vector.new(self[:x] / scalar, self[:y] / scalar, self[:z] / scalar)
+    else
+      nil
+    end
   end
 
   # Dot product of two vectors
