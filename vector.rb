@@ -6,6 +6,12 @@ class Vector < Hash
     self[:z] = z_init
   end
 
+  def copy vector
+    self[:x] = vector.x
+    self[:y] = vector.y
+    self[:z] = vector.z
+  end
+
   def x
     self[:x]
   end
@@ -98,7 +104,7 @@ class Vector < Hash
   def set_mag! value
     mag = self.mag
     if mag == 0
-      self.set(0,0,0)
+      self.set!(0,0,0)
     else
       mag = self.mag
       self.set!(self[:x] * value / mag, self[:y] * value / mag, self[:z] * value / mag)
