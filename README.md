@@ -1,6 +1,6 @@
 # Vector
 
-A DragonRuby GTK Library
+A DragonRuby GTK Library to work with vector (2D or 3D)
 
 ## Methods
 
