@@ -77,6 +77,11 @@ class Vector < Hash
     self[:x]**2 + self[:y]**2 + self[:z]**2
   end
 
+  # Return the direction of the vector
+  def dir
+    Math.atan2(self[:y], self[:x])
+  end
+
   # Set a vector to x and y value
   def set! x = 0, y = 0, z = 0
     self[:x] = x
