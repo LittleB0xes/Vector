@@ -136,6 +136,7 @@ class Vector < Hash
     Math.acos(cos_angle) * sign
   end
 
+  # Randomize and normalize a vector
   def random_vector!
     self[:x] = [-1, 1].sample * rand()
     self[:y] = [-1, 1].sample * rand()
@@ -143,6 +144,15 @@ class Vector < Hash
     self.normalize!
   end
 
+  # Return the orthogonal projection of the vector
+  def ortho_proj ortho_vector
+    null_vector = Vector.new
+    if !ortho_vector.is_equal?(null_vector)
+      ortho_vector.cross(self.cross ortho_vector)
+    else
+      nil
+    end
+  end
 
 end
 
