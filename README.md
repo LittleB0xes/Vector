@@ -52,6 +52,14 @@ b = Vector.new(1, 3)
 c = a.dot b       # => c = 6
 ```
 
+**cross(Vector) -> new Vector**
+
+Return the cross products of vectors
+
+```ruby
+
+```
+
 **mag -> Number**
 
 Return the magnitude of the vector
@@ -70,6 +78,15 @@ a = Vector.new(3, 4)
 c = a.mag_squared         # => c = 25
 ```
 
+**dir -> Number**
+
+Return, in radians, the direction (heading) of a vector
+
+```ruby
+
+
+```
+
 **set!(x, y, z) -> Vector**
 
 Set the value of the vector to x, y, z
@@ -78,4 +95,12 @@ Set the value of the vector to x, y, z
 a = Vector.new(3, 1, 4)
 a.set!(1, 5, 9)
 puts a # => {x: 1, y: 5, z: 9}
+```
+
+**dist(Vector) -> Number**
+
+Return the distance between two points(as vectors)
+
+```ruby
+
 ```
