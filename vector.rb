@@ -1,4 +1,8 @@
 class Vector < Hash
+  UNIT_X = Vector.new(1, 0, 0)
+  UNIT_y = Vector.new(0, 1, 0)
+  UNIT_Z = Vector.new(0, 0, 1)
+
   def initialize x_init = 0, y_init = 0, z_init = 0
     super nil
     self[:x] = x_init
@@ -125,7 +129,7 @@ class Vector < Hash
     [self[:x], self[:y], self[:z]]
   end
 
-  # Return the oriented angle between two vectors
+  # Return the oriented angle(in rad) between two vectors
   def angle_with vector
     cos_angle =[1, [(self.dot vector) / (self.mag * vector.mag), -1].max].min
 
@@ -134,6 +138,14 @@ class Vector < Hash
     sign = 1 if sign == 0
 
     Math.acos(cos_angle) * sign
+  end
+
+  # Rotate vector around z-axis with an angle(in rad)
+  def z_rotate! angle
+    x = self[:x] * Math.cos(angle) - self[:y] * Math.sin(angle)
+    y = self[:x] * Math.sin(angle) + self[:y] * Math.cos(angle)
+    self.set!(x, y, self[:z])
+
   end
 
   # Randomize and normalize a vector
@@ -146,6 +158,7 @@ class Vector < Hash
 
   # Return the orthogonal projection of the vector
   def ortho_proj ortho_vector
+    ortho_vector.normalize!
     null_vector = Vector.new
     if !ortho_vector.is_equal?(null_vector)
       ortho_vector.cross(self.cross ortho_vector)
