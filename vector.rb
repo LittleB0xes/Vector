@@ -1,7 +1,4 @@
 class Vector < Hash
-  UNIT_X = Vector.new(1, 0, 0)
-  UNIT_y = Vector.new(0, 1, 0)
-  UNIT_Z = Vector.new(0, 0, 1)
 
   def initialize x_init = 0, y_init = 0, z_init = 0
     super nil
